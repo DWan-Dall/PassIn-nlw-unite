@@ -1,12 +1,17 @@
 ﻿using PassIn.Communication.Requests;
+<<<<<<< HEAD
 using PassIn.Communication.Responses;
 using PassIn.Exceptions;
 using PassIn.Infrastructure;
+=======
+using PassIn.Exceptions;
+>>>>>>> 796eb8c06301e4da3eaca30f25d423904e3c03b8
 
 namespace PassIn.Application.UseCases.Events.Register
 {
     public class RegisterEventUseCase
     {
+<<<<<<< HEAD
         public ResponseRegisteredEventJson Execute(RequestEventJson request)
         {
             Validate(request);
@@ -28,6 +33,11 @@ namespace PassIn.Application.UseCases.Events.Register
             {
                 Id = entity.Id
             };
+=======
+        public void Execute(RequestEventJson request)
+        {
+            Validate(request);
+>>>>>>> 796eb8c06301e4da3eaca30f25d423904e3c03b8
         }
 
         private void Validate(RequestEventJson request)
