@@ -44,17 +44,17 @@ namespace PassIn.Application.UseCases.Events.Register
         {
             if(request.MaximumAttendees <= 0)
             {
-                throw new PassInException("O número de pessoas é inválido.");
+                throw new ErrorOnValidationException("O número de pessoas é inválido.");
             }
 
             if(string.IsNullOrWhiteSpace(request.Title))
             {
-                throw new PassInException("O título é inválido.");
+                throw new ErrorOnValidationException("O título é inválido.");
             }
 
             if(string.IsNullOrWhiteSpace(request.Details))
             {
-                throw new PassInException("A descrição é inválida.");
+                throw new ErrorOnValidationException("A descrição é inválida.");
             }
 
 
