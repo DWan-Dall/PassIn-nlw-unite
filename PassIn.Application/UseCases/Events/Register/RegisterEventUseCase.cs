@@ -1,18 +1,13 @@
 ﻿using PassIn.Communication.Requests;
-<<<<<<< HEAD
 using PassIn.Communication.Responses;
 using PassIn.Exceptions;
 using PassIn.Infrastructure;
-=======
-using PassIn.Exceptions;
->>>>>>> 796eb8c06301e4da3eaca30f25d423904e3c03b8
 
 namespace PassIn.Application.UseCases.Events.Register
 {
     public class RegisterEventUseCase
     {
-<<<<<<< HEAD
-        public ResponseRegisteredEventJson Execute(RequestEventJson request)
+        public ResponseRegisteredJson Execute(RequestEventJson request)
         {
             Validate(request);
 
@@ -29,35 +24,30 @@ namespace PassIn.Application.UseCases.Events.Register
             dbContext.Events.Add(entity);
             dbContext.SaveChanges();
 
-            return new ResponseRegisteredEventJson
+            return new ResponseRegisteredJson
             {
                 Id = entity.Id
             };
-=======
-        public void Execute(RequestEventJson request)
-        {
-            Validate(request);
->>>>>>> 796eb8c06301e4da3eaca30f25d423904e3c03b8
         }
 
-        private void Validate(RequestEventJson request)
+        private static void Validate(RequestEventJson request)
         {
-            if(request.MaximumAttendees <= 0)
+            if (request.MaximumAttendees <= 0)
             {
                 throw new ErrorOnValidationException("O número de pessoas é inválido.");
             }
 
-            if(string.IsNullOrWhiteSpace(request.Title))
+            if (string.IsNullOrWhiteSpace(request.Title))
             {
                 throw new ErrorOnValidationException("O título é inválido.");
             }
 
-            if(string.IsNullOrWhiteSpace(request.Details))
+            if (string.IsNullOrWhiteSpace(request.Details))
             {
                 throw new ErrorOnValidationException("A descrição é inválida.");
             }
 
-
         }
     }
 }
+
